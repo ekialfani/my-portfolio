@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -32,7 +34,7 @@ module.exports = {
                   require('autoprefixer'),
                 ],
               },
-            }
+            },
           },
         ],
       },
@@ -48,8 +50,8 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
-        }
+        },
       ],
     }),
   ],
-}
+};
