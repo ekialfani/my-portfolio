@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu-item a::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 5px;
+  background-color: #22c55e;
+  border-radius: 50px;
+  margin: 2px auto;
+  transform: scale(0);
+  transition: .3s;
+}
+
+.menu-item:hover a::after {
+  transform: scale(1);
+}
+
+.menu-item:active a {
+  color: white;
+}
+
+.menu-item .active::after {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+  .show {
+    animation: drawerShow 0.3s forwards;
+  }
+
+  .hide {
+    animation: drawerHide 0.3s forwards;
+  }
+
+  @keyframes drawerShow {
+    0% {
+      opacity: 0;
+      height: 0;
+    }
+
+    100% {
+      opacity: 1;
+      height: 100vh;
+    }
+  }
+
+  @keyframes drawerHide {
+    0% {
+      opacity: 1;
+      height: 100vh;
+    }
+
+    100% {
+      opacity: 0;
+      overflow: hidden;
+      height: 0;
+    }
+  }
+}
